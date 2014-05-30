@@ -32,6 +32,8 @@ endif
 nnoremap <silent> <Plug>VinegarSplitUp :call <SID>opendir('split')<CR>
 nnoremap <silent> <Plug>VinegarVerticalSplitUp :call <SID>opendir('vsplit')<CR>
 
+nmap <silent> <Plug>VinegarLastBuffer :b<C-R>=b:last_buf<CR><CR>
+
 function! s:opendir(cmd)
   let df = ','.s:dotfiles
   if expand('%:t')[0] ==# '.' && g:netrw_list_hide[-strlen(df):-1] ==# df
@@ -80,7 +82,6 @@ function! s:setup_vinegar() abort
     let s:netrw_up = strpart(s:netrw_up, 0, strlen(s:netrw_up)-4)
   endif
   nmap <buffer> - <Plug>VinegarUp
-  nmap <buffer> <Esc> :b<C-R>=b:last_buf<CR><CR>
   nnoremap <buffer> ~ :edit ~/<CR>
   nnoremap <buffer> . :<C-U> <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR><Home>
   xnoremap <buffer> . <Esc>: <C-R>=<SID>escaped(line("'<"), line("'>"))<CR><Home>

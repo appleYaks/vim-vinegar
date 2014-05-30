@@ -29,6 +29,11 @@ to even consider.
   with a bang.  Type `!chmod +x` and get `:!chmod +x path/to/file`.
 * Press `cg` or `cl` to `:cd` or `:lcd` to the currently edited directory.
 * Press `~` to go home.
+* Create a mapping in your `vimrc` to return you to the buffer you were in before you opened vinegar:
+
+    ```vim
+    autocmd FileType netrw nmap <buffer> [your mapping here] <Plug>VinegarLastBuffer
+    ```
 
 ## Installation
 
