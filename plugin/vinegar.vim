@@ -32,7 +32,16 @@ endif
 nnoremap <silent> <Plug>VinegarSplitUp :call <SID>opendir('split')<CR>
 nnoremap <silent> <Plug>VinegarVerticalSplitUp :call <SID>opendir('vsplit')<CR>
 
+" nnoremap <silent> <Plug>VinegarLastBuffer <SID>lastbuffer()<CR>
 nmap <silent> <Plug>VinegarLastBuffer :b<C-R>=b:last_buf<CR><CR>
+
+function! s:lastbuffer()
+  let last_buf = b:last_buf
+  let this_buf = b:this_buf
+
+  exe "b".last_buf
+  " exe "bd ".this_buf
+endfunction
 
 function! s:opendir(cmd)
   let df = ','.s:dotfiles
@@ -73,6 +82,7 @@ endfunction
 
 function! s:setup_vinegar() abort
   let b:last_buf = bufnr('#')
+  let b:this_buf = bufnr('%')
   if empty(s:netrw_up)
     " save netrw mapping
     let s:netrw_up = maparg('-', 'n')
