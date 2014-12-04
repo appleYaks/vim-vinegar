@@ -1,6 +1,6 @@
 # vinegar.vim
 
-*WARNING: This fork is now unnecessary! Please use the vimrc autocmd outlined in [@tamagokun's comment here](tpope/vim-vinegar/issues/32#issuecomment-65649060):*
+**WARNING: This fork is now unnecessary! Please use the vimrc autocmd outlined in [@tamagokun's comment here](https://github.com/tpope/vim-vinegar/issues/32#issuecomment-65649060):**
 
 ```viml
 autocmd FileType netrw nmap <buffer> <esc> <C-^>
@@ -8,7 +8,9 @@ autocmd FileType netrw nmap <buffer> <esc> <C-^>
 
 # Purpose of this fork
 
-To give the ability to map a key that returns you to the last buffer you were working on when inside a netrw buffer, as described in this [issue](tpope/vim-vinegar/issues/32#issuecomment-65649060).
+To give the ability to map a key that returns you to the last buffer you were working on when inside a netrw buffer, as described in this [issue](https://github.com/tpope/vim-vinegar/issues/32#issuecomment-65649060).
+
+# Original README
 
 > Split windows and the project drawer go together like oil and vinegar. I
 > don't mean to say that you can combine them to create a delicious salad
